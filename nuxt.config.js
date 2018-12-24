@@ -61,5 +61,16 @@ module.exports = {
     extend(config, ctx) {
       
     }
+  },
+
+  generate: {
+    routes () {
+      return axios.get("http://jsonplaceholder.typicode.com/posts")
+      .then( res => {
+        return res.data.map( post => {
+          return '/post/' + post.id
+        })
+      }
+    }
   }
 }
