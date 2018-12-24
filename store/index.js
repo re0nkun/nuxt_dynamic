@@ -20,7 +20,8 @@ export const actions = {
     //   { "id": 2, "title": "2番目の投稿です。" },
     //   { "id": 3, "title": "３番めの投稿です。" }
     // ]
-    axios.get("http://jsonplaceholder.typicode.com/posts").then(result => {
+    axios.get("http://jsonplaceholder.typicode.com/posts")
+    .then(result => {
       ctx.commit("set", result.data)
     })
   }
