@@ -1,3 +1,4 @@
+import axios from 'axios'
 const pkg = require('./package')
 
 module.exports = {
