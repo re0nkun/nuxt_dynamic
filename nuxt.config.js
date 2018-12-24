@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 const pkg = require('./package')
 
 module.exports = {
@@ -71,7 +71,7 @@ module.exports = {
         return res.data.map( post => {
           return '/post/' + post.id
         })
-      }
+      })
     }
   }
 }
