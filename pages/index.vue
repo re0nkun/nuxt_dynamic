@@ -17,31 +17,28 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
 import axios from 'axios'
 
 export default {
-  // layout: 'mypage',
-  // components: { Logo },
-  data() { 
-    return {
-      posts: null
-    } 
-  },
-  mounted() {
-    axios.get("https://jsonplaceholder.typicode.com/posts")
-    .then(result => {
-      this.posts = result.data
-    })
-  },
-  // computed: {
-  //   posts() {
-  //     return this.$store.getters.posts
-  //   }
+  // data() { 
+  //   return {
+  //     posts: null
+  //   } 
   // },
   // mounted() {
-  //   this.$store.dispatch("load")
-  // }
+  //   axios.get("https://jsonplaceholder.typicode.com/posts")
+  //   .then(result => {
+  //     this.posts = result.data
+  //   })
+  // },
+  computed: {
+    posts() {
+      return this.$store.getters.posts
+    }
+  },
+  mounted() {
+    this.$store.dispatch("load")
+  }
 }
 </script>
 
