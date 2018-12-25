@@ -8,9 +8,9 @@
           {{post.title}}
         </nuxt-link> -->
 
-        <router-link :to="{name:'post-id',params:{id: post.id}}">
+        <!-- <router-link :to="{name:'post-id',params:{id: post.id}}"> -->
           {{post.title}}
-        </router-link>
+        <!-- </router-link> -->
       </li>
     </ul>
   </div>
@@ -18,18 +18,30 @@
 
 <script>
 // import Logo from '~/components/Logo.vue'
+import axios from 'axios'
+
 export default {
   // layout: 'mypage',
   // components: { Logo },
-  // data() { return {} },
-  computed: {
-    posts() {
-      return this.$store.getters.posts
-    }
+  data() { 
+    return {
+      posts: null
+    } 
   },
   mounted() {
-    this.$store.dispatch("load")
-  }
+    axios.get("http://jsonplaceholder.typicode.com/posts")
+    .then(result => {
+      this.posts = result.data
+    })
+  },
+  // computed: {
+  //   posts() {
+  //     return this.$store.getters.posts
+  //   }
+  // },
+  // mounted() {
+  //   this.$store.dispatch("load")
+  // }
 }
 </script>
 
