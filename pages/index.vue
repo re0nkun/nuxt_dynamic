@@ -29,7 +29,7 @@ export default {
     } 
   },
   mounted() {
-    axios.get("http://jsonplaceholder.typicode.com/posts")
+    axios.get("https://jsonplaceholder.typicode.com/posts")
     .then(result => {
       this.posts = result.data
     })
