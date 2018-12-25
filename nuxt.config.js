@@ -65,11 +65,11 @@ module.exports = {
   },
 
   generate: {
-    // routes: [
-    //   '/post/1',
-    //   '/post/2',
-    //   '/post/3'
-    // ]
+    routes: [
+      '/post/1',
+      '/post/2',
+      '/post/3'
+    ]
     // routes () {
     //   return axios.get("http://jsonplaceholder.typicode.com/posts")
     //   .then( res => {

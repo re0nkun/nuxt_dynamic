@@ -8,9 +8,9 @@
           {{post.title}}
         </nuxt-link> -->
 
-        <!-- <router-link :to="{name:'post-id',params:{id: post.id}}"> -->
+        <router-link :to="{name:'post-id',params:{id: post.id}}" :post="post">
           {{post.title}}
-        <!-- </router-link> -->
+        </router-link>
       </li>
     </ul>
   </div>
